@@ -16,6 +16,7 @@ export class ShowNeoComponent implements OnInit {
   ast_count:any;
   dateForm:FormGroup;
   loader:boolean=false;
+  myChart;
   constructor(private messageService: MessageService,private formBuilder: FormBuilder,private BlogService:BlogService, public datepipe: DatePipe) { 
     this.dateForm =this.formBuilder.group({
       start_date : ['',Validators.required],
@@ -43,13 +44,16 @@ export class ShowNeoComponent implements OnInit {
             let count= data['near_earth_objects'][Object.keys(data.near_earth_objects)[i]].length;
             this.ast_count.push(count);
         }
-        let myChart = new Chart(this.ctx, {
+        if (this.myChart) {
+          this.myChart.destroy();
+        }
+         this.myChart = new Chart(this.ctx, {
           type: 'bar',
           data: {
            // labels: ["2015-01", "2015-02", "2015-03", "2015-04", "2015-05", "2015-06", "2015-07", "2015-08", "2015-09", "2015-10", "2015-11", "2015-12"],
            labels: Object.keys(data.near_earth_objects), 
            datasets: [{
-              label: '# of Asteroid',
+               label: '# of Asteroid',
               data: this.ast_count,
               backgroundColor: [
                 '#ff6666',
@@ -78,14 +82,28 @@ export class ShowNeoComponent implements OnInit {
               xAxes: [{
                 ticks: {
                   maxRotation: 90,
-                  minRotation: 80
-                }
+                  minRotation: 80,
+                  fontColor: "white",
+                },
+                gridLines: {
+                  lineWidth: 1,
+                  color: '#ffffff',
+                  
+                },
               }],
+              backgroundColor: 'rgba(123, 83, 252, 0.8)',
               yAxes: [{
                 ticks: {
-                  beginAtZero: true
-                }
-              }]
+                  beginAtZero: true,
+                  fontColor: "white",
+                  
+                },
+                gridLines: {
+                  color: "white",
+                  lineWidth: 1
+                },
+              }],
+              
             },
             
           }
