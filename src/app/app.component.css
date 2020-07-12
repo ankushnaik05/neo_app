@@ -1,0 +1,68 @@
+:host>>>#heading-{
+    display:none !important;
+}
+:host>>> #fontSelector-{
+    display:none !important;
+}
+:host>>>#insertVideo-{
+    display:none !important;
+}
+:host>>>#backgroundColorPicker-{
+    display:none !important;
+}
+:host>>>.code{
+    font-size: 15px;
+    background-color:red;
+    border-radius: 3px;
+    padding: 12px;
+    margin: 10px;
+}
+
+/* start:-steps css */
+:host>>>.ui-steps .ui-steps-item {
+    width: 20%;
+}
+
+:host>>>.ui-steps.steps-custom {
+    margin-bottom: 30px;
+}
+
+:host>>>.ui-steps.steps-custom .ui-steps-item .ui-menuitem-link {
+    height: 10px;
+    padding: 0 1em;
+}
+
+:host>>>.ui-steps.steps-custom .ui-steps-item .ui-steps-number {
+    background-color: #0081c2;
+    color: #FFFFFF;
+    display: inline-block;
+    width: 36px;
+    border-radius: 50%;
+    margin-top: -14px;
+    margin-bottom: 10px;
+}
+
+:host>>>.ui-steps.steps-custom .ui-steps-item .ui-steps-title {
+    color: #555555;
+}
+/* end:-steps css */
+
+:host>>>.ql-background .ql-picker .ql-color-picker{
+    display:none;
+}
+:host>>> pre.ql-syntax {
+    background-color: #23241f !important;
+    color: #f8f8f2 !important;
+    overflow: visible !important;
+}
+
+:host>>> pre.ql-syntax {
+    white-space: pre-wrap;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px 10px;
+}
+
+:host>>>pre.ql-syntax {
+    border-radius: 3px;
+}

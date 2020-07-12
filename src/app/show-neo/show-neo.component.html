@@ -1,0 +1,27 @@
+<p-progressBar *ngIf ="loader" mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+<div id="header">
+<div class="mainimg" >
+        <h3>NEAR EARTH OBJECT</h3>
+ </div> 
+ 
+<div style="padding: 28px;text-align: center">
+    <form [formGroup]="dateForm" (ngSubmit)="onSubmit()">
+      
+        <span style="padding: 20px;">
+          <p-calendar  placeholder="Start Date" formControlName="start_date" dateFormat="yy-mm-dd" [readonlyInput]="true"></p-calendar>
+        </span>
+        <span style="padding: 20px;"> 
+        <p-calendar  placeholder="End Date" formControlName="end_date" dateFormat="yy-mm-dd" [readonlyInput]="true"></p-calendar>
+      </span>
+        <button pButton type="submit" label="Submit" [disabled]="!dateForm.valid"></button>
+    </form>
+    <!-- <p-progressSpinner ></p-progressSpinner> -->
+    </div>
+</div>
+<div class="chart-container" style="position: relative; margin-left:20px;height:50vh; width:70vw">
+<canvas id="myChart"></canvas>
+</div>
+
+
+<!-- toast message -->
+<p-toast></p-toast>
